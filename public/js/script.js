@@ -90,7 +90,6 @@ const renderResult = (dataRps, dataPM) => {
                 status.map(s => {
                     if(s.bo === data.title){
                         color = s[Today] == data[d] ? 'bg-success' : 'bg-danger';
-                        console.log(s[Today],data[d]);
                     }
                 })
     
@@ -151,12 +150,6 @@ const dataPM = dataRps => {
 getDataRps().then(dataPM);
 
 setInterval(() => {
-    const dataPM = dataRps => {
-        getDataPM().then(res => groupsData(res)).then(response => {
-            renderResult(dataRps,response);
-        }).catch(console.error);
-    };
-    
     getDataRps().then(dataPM);
 },60000);
 
