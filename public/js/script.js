@@ -54,7 +54,6 @@ const groupsData = (d) => {
 }
 const renderResult = (dataRps, dataPM) => {
     const header = document.getElementById('header-rps');
-    console.log(dataRps)
 
     const { Rps, Rev } = dataPM['LINE A'][0];
     header.innerHTML = `<p>Rps ${Rps} Revisi-${Rev}</p>`;
@@ -119,7 +118,6 @@ const renderResult = (dataRps, dataPM) => {
                 status.map(s => {
                     if(s.bo === data.title){
                         color = s[Tomorow] == data[d] ? 'bg-success' : 'bg-danger';
-                        console.log(s[Tomorow],data[d]);
                     }
                 })
 
@@ -152,12 +150,13 @@ const dataPM = dataRps => {
 
 getDataRps().then(dataPM);
 
-// setInterval(() => {
-//     getDataRps().then(res => {
-//         return res.reduce((groups,item) => ({
-//             ...groups,
-//             [item.hari]: [...(groups[item.hari] || []),item]
-//         }),{})
-//     }).then(dataPM);
-// },60000);
+setInterval(() => {
+    const dataPM = dataRps => {
+        getDataPM().then(res => groupsData(res)).then(response => {
+            renderResult(dataRps,response);
+        }).catch(console.error);
+    };
+    
+    getDataRps().then(dataPM);
+},60000);
 
