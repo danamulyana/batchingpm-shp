@@ -21,7 +21,7 @@
     padding-bottom: .3rem !important;
 }
 #secondary-panel{
-    min-height: 90vh;
+    max-height: 90vh;
     /* padding: 2rem 0; */
     overflow-y: auto;
 }
