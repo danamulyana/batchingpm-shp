@@ -22,8 +22,8 @@
 }
 #secondary-panel{
     min-height: 4rem;
-    padding: 2rem 0;
-    overflow-x: auto;
+    /* padding: 2rem 0; */
+    overflow-y: auto;
 }
 #secondary-panel .card{
     min-width: 18.75rem;
