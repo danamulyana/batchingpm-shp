@@ -62,7 +62,7 @@ const renderResult = (dataRps, dataPM) => {
     dataRps.map(data => {
         if(data.type === 'Line'){
             mainPanel.innerHTML += `
-            <div class="col-3">
+            <div class="col-2">
                 <div class="card">
                     <div class="card-body card-line">
                         <h5>${data.title}</h5>
