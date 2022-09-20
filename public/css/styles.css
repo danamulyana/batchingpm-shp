@@ -14,7 +14,7 @@
     gap: 0.5em;
     padding-top: 1rem;
 }
-#main-panel > .card > .card-body{
+#main-panel > .card .card-main{
     padding: .5rem;
 }
 #secondary-panel{

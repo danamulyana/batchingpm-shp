@@ -95,7 +95,7 @@ const renderResult = (dataRps, dataPM) => {
     
                 elem.innerHTML += `
                     <div class="card my-2">
-                        <div class="card-body">
+                        <div class="card-body card-main">
                             <div class="row align-items-center">
                                 <div class="col-9">
                                     <p><span>${data.title}</span> | <span>${data.codeProduct}</span> | <span>${data[d]} cgs</span></p>
