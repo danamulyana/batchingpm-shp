@@ -17,6 +17,9 @@
 #main-panel > .card .card-main{
     padding: .5rem;
 }
+.card-line{
+    padding: .3rem;
+}
 #secondary-panel{
     min-height: 4rem;
     padding: 2rem 0;
