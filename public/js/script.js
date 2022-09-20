@@ -62,7 +62,7 @@ const renderResult = (dataRps, dataPM) => {
     dataRps.map(data => {
         if(data.type === 'Line'){
             mainPanel.innerHTML += `
-            <div class="card col-2">
+            <div class="card col-3">
                 <div class="card-body card-line">
                     <h5>${data.title}</h5>
                     <div id="container-today-${data.title.toLowerCase().replace(/\s+/g, '-')
