@@ -39,7 +39,7 @@
 }
 @media only screen and (min-width: 1080px) {
     #main-panel{
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(5,1fr);
     }
 }
 @media only screen and (min-width: 2068px) {
