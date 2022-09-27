@@ -1,0 +1,244 @@
+<% extend('../layouts/app') %> 
+
+<section class="content-header">
+  <h1>
+    Pengerjaan Batching PM
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+  <div class="col-xs-12">
+      <div class="box">
+          <div class="box-body">
+            <form action="" role="form">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="form-group">
+                    <label>No BO</label>
+                    <input type="text" class="form-control" placeholder="Enter No BO..." disabled="">
+                  </div>
+                </div>
+                <div class="col-xs-5">
+                  <div class="form-group">
+                    <label>Code Product</label>
+                    <input type="text" class="form-control" placeholder="Enter Code Product..." disabled="">
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <div class="form-group">
+                    <label>Chargis</label>
+                    <input type="text" class="form-control" placeholder="Enter Chargis..." disabled="">
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="form-group">
+                    <label>Line</label>
+                    <input type="text" class="form-control" placeholder="Enter Line..." disabled="">
+                  </div>
+                </div>
+                <div class="col-xs-8">
+                  <div class="form-group">
+                    <label>Tanggal Pengerjaan</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
+                      <input class="form-control" type="text" placeholder="Enter Tanggal Pengerjaan..." disabled="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Product Description</label>
+                <textarea class="form-control" rows="2" placeholder="Enter Product Description..." disabled=""></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label>Staging</label>
+                <select class="form-control" id="staging">
+                  <option>Staging A</option>
+                  <option>Staging B</option>
+                  <option>Staging C</option>
+                  <option>Staging D</option>
+                  <option>Staging E</option>
+                  <option>Staging F</option>
+                  <option>Staging G</option>
+                  <option>Staging H</option>
+                  <option>Staging I</option>
+                  <option disabled>Staging J</option>
+                </select>
+              </div>
+              <div class="form-group d-checkbox">
+                
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 01 
+                  </label>
+                </div>
+
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 02
+                  </label>
+                </div>
+
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 03
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 04
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 05
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 06
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 07
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 08
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 09
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 10
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 11
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 12
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 13
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 14
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 15
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 16
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 17
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="staging-details[]">
+                    SA 18
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Remark</label>
+                <textarea class="form-control" rows="3" placeholder="Enter Remark..."></textarea>
+              </div>
+            </form>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer d-flex flex-row-reverse">
+            <button type="submit" id="submit-batching" class="btn btn-primary">Submit</button>
+          </div>
+      </div>
+      <!-- /.box -->
+  </div>
+  </div>
+</section>
+
+<script defer>
+    let submit = document.getElementById('submit-batching');
+
+    if(localStorage.getItem('pengerjaan-bo') == null){
+        let data = {
+            bo: 36365,
+            start: new Date().getTime(),
+            idUser: 'Dana Mulyana'
+        }
+        localStorage.setItem('pengerjaan-bo',JSON.stringify(data));
+    }
+
+    const diff_minutes = (dt2,dt1) => {
+      let diff = (dt2 - dt1) / 1000;
+      diff /= 60;
+      return Math.abs(Math.round(diff));
+    } 
+
+    let dcbox = '';
+    let cboxes = document.getElementsByName('staging-details[]');
+
+    console.log(cboxes);
+    submit.addEventListener('click', (e) => {
+        cboxes.forEach((data,index) => {
+            if(data.checked){
+                dcbox += data.labels[0].innerText + ',';
+            }
+        })
+        let data  = JSON.parse(localStorage.getItem('pengerjaan-bo'));
+        let menit = diff_minutes(data.start,new Date().getTime());
+        let finish = {
+            bo: data.bo,
+            idUser: data.idUser,
+            start: data.start,
+            end: new Date().getTime(),
+            menit: menit,
+            staging: document.getElementById('staging').value,
+            staging_detail: dcbox.split(','),
+        }
+        localStorage.setItem('success_pengerjaan',JSON.stringify(finish));
+        localStorage.removeItem('pengerjaan-bo');
+    });
+    
+</script>

@@ -62,7 +62,7 @@ const renderResult = (dataRps, dataPM) => {
     dataRps.map(data => {
         if(data.type === 'Line'){
             mainPanel.innerHTML += `
-            <div class="col-2">
+            <div class="col-1 col-md-3 col-lg-3 mb-3">
                 <div class="card">
                     <div class="card-body card-line">
                         <h5>${data.title}</h5>
@@ -124,7 +124,7 @@ const renderResult = (dataRps, dataPM) => {
                 })
 
                 elem.innerHTML += `
-                    <div class="card m-2">
+                    <div class="card my-2 mx-4">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-9">

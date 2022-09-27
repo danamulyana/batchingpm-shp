@@ -1,0 +1,23 @@
+.d-checkbox{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.d-checkbox > .checkbox{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.d-flex{
+    display: flex;
+    display: -ms-flexbox!important;
+}
+.flex-row {
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+}
+.flex-row-reverse {
+    -ms-flex-direction: row-reverse!important;
+    flex-direction: row-reverse!important;
+}

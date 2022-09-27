@@ -1,0 +1,82 @@
+<% extend('../layouts/app') %> 
+
+<section class="content-header">
+  <h1>
+    List Pengerjaan Batching PM
+    <small>Preview</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">List Pengerjaan Batching PM</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+  <div class="col-xs-12">
+      <div class="box">
+      <div class="box-header">
+          <h3 class="box-title">LIst Pengerjaan Table</h3>
+
+          <div class="box-tools">
+          <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+              <div class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </div>
+          </div>
+          </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+          <tr>
+              <th>ID</th>
+              <th>Rps</th>
+              <th>Line</th>
+              <th>Bo</th>
+              <th>Code Product</th>
+              <th>Pengerjaan</th>
+              <th>Status</th>
+              <th>Action</th>
+          </tr>
+          
+          <tr>
+              <td>183</td>
+              <td>38</td>
+              <td>LINE A</td>
+              <td>36365</td>
+              <td>MCSVF003</td>
+              <td>Senin - Selasa</td>
+              <td><span class="label label-warning">Sedang di kerjakan</span></td>
+              <td>
+                  <a href="kerjakan/bo/36365" class="btn btn-sm btn-success">Kembali kerjakan</a>
+              </td>
+          </tr>
+          <tr>
+              <td>184</td>
+              <td>38</td>
+              <td>LINE A</td>
+              <td>35758</td>
+              <td>CSPVB003</td>
+              <td>Selasa</td>
+              <td><span class="label label-danger">belum di kerjakan</span></td>
+              <td>
+                  <a href="kerjakan/bo/36365" class="btn btn-sm btn-success">kerjakan</a>
+              </td>
+          </tr>
+          </table>
+      </div>
+      <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+  </div>
+  </div>
+</section>
+
+<script defer>
+    const log = localStorage.getItem('pengerjaan-bo');
+    console.log(log)
+</script>
