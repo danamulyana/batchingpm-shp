@@ -10,3 +10,7 @@ let data = [
 function getDatas(){
     return data;
 }
+
+module.exports = { 
+    getDatas
+}

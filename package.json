@@ -11,5 +11,8 @@
     "express": "^4.15.2",
     "express-ejs-extend": "^0.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "html5-qrcode": "^2.2.1"
+  }
 }

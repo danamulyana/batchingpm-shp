@@ -20,13 +20,7 @@
           <h3 class="box-title">LIst Pengerjaan Table</h3>
 
           <div class="box-tools">
-          <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-              <div class="input-group-btn">
-              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-              </div>
-          </div>
+            <button class="btn btn-primary" id="scan-btn">Scan Barcode / QRCode</button>
           </div>
       </div>
       <!-- /.box-header -->
@@ -76,7 +70,50 @@
   </div>
 </section>
 
+<!-- Modal -->
+<div class="modal fade" id="Scan" tabindex="-1" role="dialog" aria-labelledby="ScanLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="ScanLabel">35758 | CSPVB003</h4>
+        </div>
+        <div class="modal-body">
+            <div id="qr-reader" style="width: 100%;"></div>
+            <div id="qr-reader-results"></div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
 <script defer>
+    const scanBtn = document.getElementById('scan-btn');
+    const resultContainer = document.getElementById('qr-reader-results');
+    let lastResult, countResults = 0;
+    let html5QrcodeScanner = new Html5QrcodeScanner(
+        "qr-reader", { fps: 10, qrbox: 250 }
+    )
+
+    function onScanSuccess(decodedText, decodedResult) {
+        if (decodedText !== lastResult) {
+            ++countResults;
+            lastResult = decodedText;
+            // Handle on success condition with the decoded message.
+            console.log(`Scan result ${decodedText}`, decodedResult);
+        }
+        html5QrcodeScanner.clear();
+        $('#Scan').modal('toggle')
+    }
+    
+    scanBtn.addEventListener('click',(e) => {
+        $('#Scan').modal('toggle')
+        html5QrcodeScanner.render(onScanSuccess);
+    });
+
     const log = localStorage.getItem('pengerjaan-bo');
     console.log(log)
 </script>
