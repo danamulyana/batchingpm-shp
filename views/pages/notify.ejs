@@ -15,6 +15,9 @@
         window.addEventListener('load',() =>  {
             const btn = document.getElementById('show-notify');
             btn.addEventListener('notifyEvent', customEventHandler);
+            btn.addEventListener('click',() => {
+                btn.dispatchEvent('notifyEvent');
+            })
         })
 
         const customEventHandler = (ev) => {
