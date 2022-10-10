@@ -22,11 +22,12 @@
 
         const customEventHandler = (ev) => {
             Notification.requestPermission()
-            .then((res) => Notification.permission == 'granted' ?? sendNotifation())
+            .then((res) => Notification.permission == 'granted' ? sendNotifation() :  customEventHandler())
             .catch((err) => alert(err));
         }
 
         const sendNotifation = () => {
+            console.log("nofity...");
             const gteeting = new Notification("hai, How are you?",{
                 body: 'Have a nice day',
             })
