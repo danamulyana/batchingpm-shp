@@ -12,6 +12,7 @@ app.engine('ejs', require('express-ejs-extend'));
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => res.render('pages/index'))
+app.get('/notification', (req, res) => res.render('pages/notify'))
 app.get('/list-pengerjaan', (req,res) => {
   res.render('pages/listPengerjaan');
 });
@@ -21,6 +22,10 @@ app.get('/kerjakan/bo/36365', (req,res) => {
 
 app.get('/list-pengambilan', (req,res) => {
   res.render('pages/listPengambilan');
+});
+
+app.get('/master/stagging', (req,res) => {
+  res.render('pages/masterStagging');
 });
   
 app.listen(PORT, () => console.log(`Listening on http://localhost:${ PORT }`))

@@ -1,0 +1,95 @@
+<% extend('../layouts/app') %> 
+
+<section class="content-header">
+    <h1>
+      Master Stagging
+      <small>Preview</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Master Stagging</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-primary">
+              <form role="form">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="nameStagging">Nama Stagging</label>
+                        <input type="text" class="form-control" id="nameStagging" placeholder="Enter Nama Stagging...">
+                    </div>
+                    
+                    <div class="checkbox">
+                        <label>
+                        <input type="checkbox"> Staging Active
+                        </label>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+  
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Simpan Stagging</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-6">
+            <div class="box">
+                <div class="box-body table-responsive">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Stagging</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>1</td>
+                            <td>Stagging A</td>
+                            <td><span class="label label-success">Active</span></td>
+                            <td>
+                                <a href="kerjakan/bo/36365" class="btn btn-sm btn-success">View</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-success">
+                <div class="box-header">
+                    <h3 class="box-title">Palet</h3>
+                </div>
+                <div class="box-body table-responsive">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Palate</th>
+                            <th>max tinggi Palate</th>
+                            <th>sudah di isi</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>1</td>
+                            <td>Stagging A</td>
+                            <td><span class="label label-success">Active</span></td>
+                            <td>
+                                <a href="kerjakan/bo/36365" class="btn btn-sm btn-success">View</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

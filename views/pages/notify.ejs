@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Notify</title>
+</head>
+<body>
+    <button type="button" id="show-notify">Click me to create Nofiy.</button>
+
+    <script>
+        const notifyEvent = new Event('notifyEvent');
+
+        window.addEventListener('load',() =>  {
+            const btn = document.getElementById('show-notify');
+            btn.addEventListener('notifyEvent', customEventHandler);
+        })
+
+        const customEventHandler = (ev) => {
+            Notification.requestPermission()
+            .then((res) => Notification.permission == 'granted' ?? sendNotifation())
+            .catch((err) => alert(err));
+        }
+
+        const sendNotifation = () => {
+            const gteeting = new Notification("hai, How are you?",{
+                body: 'Have a nice day',
+            })
+            gteeting.onclick = () => window.open("/");
+
+            setTimeout(() => gteeting.close(), 10*1000);
+        }
+    </script>
+</body>
+</html>
