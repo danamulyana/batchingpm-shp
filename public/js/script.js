@@ -92,7 +92,7 @@ const renderResult = (dataRps, dataPM) => {
                 let color = 'bg-danger';
                 status.map(s => {
                     if(s.bo === data.title){
-                        color = s[Today] == data[d] ? 'bg-success' : 'bg-danger';
+                        color = s.sudahBatching < s[Today]  ? 'bg-danger' : 'bg-success';
                     }
                 })
     
@@ -101,7 +101,7 @@ const renderResult = (dataRps, dataPM) => {
                         <div class="card-body card-main">
                             <div class="row align-items-center">
                                 <div class="col-9">
-                                    <p><span>${data.title}</span> | <span>${data.codeProduct}</span> | <span>${data[d]} cgs</span></p>
+                                    <p><span>${data.title}</span> | <span>${data.codeProduct}</span></p>
                                     
                                 </div>
                                 <div class="col-3 text-center">
@@ -119,7 +119,7 @@ const renderResult = (dataRps, dataPM) => {
                 let color = 'bg-danger';
                 status.map(s => {
                     if(s.bo === data.title){
-                        color = s[Tomorow] == data[d] ? 'bg-success' : 'bg-danger';
+                        color = s.sudahBatching < s[Today]  ? 'bg-danger' : 'bg-success';
                     }
                 })
 
@@ -128,7 +128,7 @@ const renderResult = (dataRps, dataPM) => {
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-9">
-                                    <h6><span>${data.title}</span> | <span>${data.codeProduct}</span> | <span>${data[d]} cgs</span></h6>
+                                    <h6><span>${data.title}</span> | <span>${data.codeProduct}</span></h6>
                                     <p>${data.line}</p>
                                 </div>
                                 <div class="col-3 text-center">
