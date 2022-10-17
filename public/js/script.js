@@ -168,3 +168,16 @@ document.addEventListener('DOMContentLoaded', (ev) => {
     main.style.height = `calc(100% - ${hnav}px)`;
     resize()
 });
+
+const pageScroll = () => {
+    let height = Math.round(document.querySelector('#secondary-panel').clientHeight);
+    let top = Math.round(document.querySelector('#secondary-panel').scrollTop);
+    if(top >= (height - 100)){
+        document.querySelector('#secondary-panel').scrollTop = 0;
+    }else{
+        document.querySelector('#secondary-panel').scrollBy(0,1);
+    }
+    setTimeout(pageScroll,10);
+}
+
+pageScroll();
