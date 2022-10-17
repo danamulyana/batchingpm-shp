@@ -1,16 +1,6 @@
 const navbar = document.getElementById('navbar');
 const main = document.getElementById('main');
 
-document.addEventListener('DOMContentLoaded', (ev) => {
-    let hnav = navbar.clientHeight;
-    main.style.height = `calc(100vh - ${hnav}px)`;
-});
-
-addEventListener('resize', ev => {
-    let hnav = navbar.clientHeight;
-    main.style.height = `calc(100vh - ${hnav}px)`
-}, true)
-
 const urlPm = "https://gsx2json.com/api?id=1I5lhzOh85F3y3RucS4XkiIreH0radExd3ZhTPO_jNPE&sheet=get-api-pm&columns=false";
 const urlRps = "https://gsx2json.com/api?id=1I5lhzOh85F3y3RucS4XkiIreH0radExd3ZhTPO_jNPE&sheet=get-api-rps&columns=false";
 const mainPanel = document.getElementById('main-panel')
@@ -62,7 +52,7 @@ const renderResult = (dataRps, dataPM) => {
     dataRps.map(data => {
         if(data.type === 'Line'){
             mainPanel.innerHTML += `
-            <div class="col-1 col-md-3 col-lg-3 mb-3">
+            <div class="col-12 col-sm-4 col-md-3 mb-3">
                 <div class="card">
                     <div class="card-body card-line">
                         <h5>${data.title}</h5>
@@ -124,7 +114,7 @@ const renderResult = (dataRps, dataPM) => {
                 })
 
                 elem.innerHTML += `
-                    <div class="card my-2 mx-4">
+                    <div class="card my-2 mx-0 p-0">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-9">
@@ -142,6 +132,7 @@ const renderResult = (dataRps, dataPM) => {
         }
     });
     
+    resize();
 }
 
 const dataPM = dataRps => {
@@ -156,3 +147,21 @@ setInterval(() => {
     getDataRps().then(dataPM);
 },60000);
 
+
+const resize = () => {
+    let main = document.querySelector('#main-panel');
+    let second = document.querySelector('#secondary-panel')
+    second.style.height = `${main.offsetHeight}px`;
+
+    let hnav = navbar.clientHeight;
+    main.style.height = `calc(100% - ${hnav}px)`
+}
+
+window.addEventListener('resize', resize);
+
+
+document.addEventListener('DOMContentLoaded', (ev) => {
+    let hnav = navbar.clientHeight;
+    main.style.height = `calc(100% - ${hnav}px)`;
+    resize()
+});
