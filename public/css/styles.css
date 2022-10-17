@@ -96,6 +96,9 @@ main .row {
     .navbar h3{
         font-size: 1.5em;
     }
+    .navbar::before{
+        opacity: 1;
+    }
 }
 @media (min-width: 768px) {
     .navbar h3{
