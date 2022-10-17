@@ -148,7 +148,7 @@ getDataRps().then(dataPM);
 
 setInterval(() => {
     getDataRps().then(dataPM);
-},60000);
+},600000);
 
 
 const resize = () => {
