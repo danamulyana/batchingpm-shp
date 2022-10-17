@@ -4,6 +4,7 @@ const main = document.getElementById('main');
 const urlPm = "https://gsx2json.com/api?id=1I5lhzOh85F3y3RucS4XkiIreH0radExd3ZhTPO_jNPE&sheet=get-api-pm&columns=false";
 const urlRps = "https://gsx2json.com/api?id=1I5lhzOh85F3y3RucS4XkiIreH0radExd3ZhTPO_jNPE&sheet=get-api-rps&columns=false";
 const mainPanel = document.getElementById('main-panel')
+const secondPanel = document.getElementById('secondary-panel')
 const tanggalSekarang = document.getElementById('tanggal-now');
 const tanggalBesok = document.getElementById('tanggal-besok');
 
@@ -49,10 +50,12 @@ const renderResult = (dataRps, dataPM) => {
     header.innerHTML = `<p>Rps ${Rps} Revisi-${Rev}</p>`;
 
     mainPanel.innerHTML = '';
+    secondPanel.innerHTML = '';
     dataRps.map(data => {
         if(data.type === 'Line'){
             mainPanel.innerHTML += `
-            <div class="col-12 col-sm-4 col-md-3 mb-3">
+            <div class="col-12 col-sm-4 col-md-3 mb-3" id="today-${data.title.toLowerCase().replace(/\s+/g, '-')
+            .replace(/\-\-+/g, '-')}">
                 <div class="card">
                     <div class="card-body card-line">
                         <h5>${data.title}</h5>
@@ -112,7 +115,6 @@ const renderResult = (dataRps, dataPM) => {
                         color = s.sudahBatching < s[Today]  ? 'bg-danger' : 'bg-success';
                     }
                 })
-
                 elem.innerHTML += `
                     <div class="card my-2 mx-0 p-0">
                         <div class="card-body">
@@ -133,6 +135,7 @@ const renderResult = (dataRps, dataPM) => {
     });
     
     resize();
+    // console.log(dataRps,dataPM);
 }
 
 const dataPM = dataRps => {
